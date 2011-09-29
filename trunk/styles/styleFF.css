@@ -1,0 +1,150 @@
+/*page.tpl*/
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, sans-serif;
+	text-decoration: none;
+	font-size: 12px;
+}
+body{
+	width:1024px;
+	margin: 2px auto;
+	position:relative;
+}
+#header h1{
+	font-size:16px;
+	color:#FFFFFF;
+	position:absolute;
+	left:7px;
+	top:4px;
+}
+#header h2{
+	color:#FFFFFF;
+	position:absolute;
+	top:102px;
+	right:376px;
+}
+#header p{
+	width:358px;
+	height:113px;
+	float:right;
+	margin-top:5px;
+}
+#menu{
+	margin-top:4px;
+	margin-left:4px;
+	width:150px;
+}
+#menu h3{
+	color:#2641af;
+	border-bottom:1px dotted #818186;
+}
+#menu ul{
+	margin-top:2px;
+	margin-bottom:5px;
+}
+#menu li{
+	list-style-image:url(../images/pijltje.gif);
+	margin-left:15px;
+	padding-bottom:1px;
+}
+#menu a{
+	color: #000000;
+}
+#menu a:hover{
+	color: #620808;
+	font-weight:bold;
+	border-bottom: 1px solid #620808;
+}
+#content{
+	position:absolute;
+	top:127px;
+	left:160px;
+	width:860px;
+        background-color:#E4E4E4;/*background*/
+}
+#footer{
+	border-top:1px solid #b6b6bb;
+	float:right;
+	margin-right:5px;
+	margin-top:5px;
+	clear:both;
+}
+#footer p{
+	font-size:9px;
+	color:#656568;
+}
+#breadcrumb{
+	margin-left:5px;
+	width:850px;
+	border-bottom:dotted #656568 1px;
+}
+#breadcrumb p{
+	color:#656568;
+}
+#breadcrumbLocatie{
+	font-weight:bold;
+}
+#inhoudBody{
+	width:850px;
+	margin-left:5px;
+	margin-top:5px;
+}
+/*jwOpdracht.tpl*/
+.docs{
+	width:120px;
+	text-align:center;
+	border:1px dotted #656568;
+	margin-right:10px;
+	margin-bottom:10px;
+}
+.docs a{
+	color:#000000;
+	width:106px;
+}
+.docs a:hover{
+	font-weight:bold;
+	color:#620808;
+}
+.docs img{
+	padding-top:7px;
+}
+/*jwKeuze.tpl*/
+.requireFields{
+	color:#FF0000;
+}
+/*b2dDoelstelling.tpl*/
+#contentb2dDoelstelling p{
+	padding-top:3px;
+	padding-bottom:5px;
+}
+#contentb2dDoelstelling img{
+	float:left;
+	padding-right:7px;
+}
+/*b2dProjecten.tpl*/
+#b2dCategories ul{
+	width:400px;
+	margin-top:3px;
+}
+#b2dCategories li{
+	list-style-image:url(../images/pijltje.gif);
+	margin-left:15px;
+	padding-bottom:5px;
+}
+#b2dCategories a{
+	color: #000000;
+	border-bottom:1px solid #b6b6bb;
+}
+#b2dCategories a:hover{
+	color: #620808;
+        font-weight:bold;
+	border-bottom: 1px solid #620808;
+}
+#b2dProjecten {
+	width:630px;
+}
+/*jwPersoonlijkeGegevens*/
+#jwPersoonlijkeGegevensDynamicData p{
+	padding-top:7px;
+}
