@@ -1,0 +1,81 @@
+/*pageAdm.tpl*/
+/* gb 10:57 zondag 11 september 2011 */
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, sans-serif;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+#header h1{
+	font-size:16px;
+	color:#FFFFFF;
+	position:absolute;
+	left:7px;
+	top:4px;
+}
+#header h2{
+	color:#FFFFFF;
+	position:absolute;
+	top:102px;
+	left:10px;
+}
+#header p{
+	/* wat hier geprobeerd wordt gaat beter in een div denk ik */
+	width:358px; 
+	height:113px;
+	float:right;
+	margin-top:5px;
+}
+#menu{
+	margin-top:4px;
+	margin-left:4px;
+	width:160px;
+}
+#menu h3{
+	color:#2641af;
+	border-bottom:1px dotted #818186;
+}
+#menu ul{
+	margin-top:2px;
+	margin-bottom:5px;
+}
+#menu li{
+	list-style-image:url(../../images/pijltje.gif);
+	margin-left:15px;
+	padding-bottom:1px;
+}
+#menu a{
+	color: #000000;
+}
+#menu a:hover{
+	color: #620808;
+	font-weight:bold;
+	border-bottom: 1px solid #620808;
+}
+#content{
+	position:absolute;
+	top:127px;
+        /* gb 
+		width:1240px;
+		*/
+	left:170px;
+        background-color:#E4E4E4;/*background*/
+}
+#footer{
+	border-top:1px solid #b6b6bb;
+	float:right;
+	margin-right:5px;
+	margin-top:5px;
+	clear:both;
+}
+#footer p{
+	font-size:9px;
+	color:#656568;
+}
+#inhoudBody{
+    width:75%; 
+	margin-left:5px;
+	margin-top:5px;
+}
