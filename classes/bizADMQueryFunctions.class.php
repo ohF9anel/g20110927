@@ -97,12 +97,14 @@ class bizADMQueryFunctions {
      * De leerlingen krijgen ook automatisch de juiste klas en klasgroep toegewezen
      *
      * @param string $beheerder    Zodat je weet wie de laatste wijziging heeft gedaan = admin['rangschik']
+     * @return string $bericht  Bericht met info en eventuele foutmeldingen
      */
     public function toevoegenLeerlingenNieuwSchooljaar($beheerder){
         $fmad = $this->db->getRecords("SELECT * FROM tbl_fmad");
         $leerlingen = $this->db->getRecords("SELECT uuid, leerling_id from tbl_leerlingen");
         $leerkrachten = $this->db->getRecords("SELECT uuid from tbl_leerkrachten");
         $klasgroepen = $this->db->getRecords("SELECT * FROM tbl_klasgroepen WHERE schooljaar =?", staticFunctions::createSchooljaar());
+        $bericht= "";
 
         foreach($fmad as $f){
             $leerling_id = 0;
@@ -141,6 +143,7 @@ class bizADMQueryFunctions {
                         $arrayLLN['aanspreek'] = $f['ln']." ".$f['fn'];
                         $arrayLLN['gewijzigd_door'] = $beheerder;
                         $leerling_id = $this->db->insert("tbl_leerlingen", $arrayLLN);
+                        $bericht .= "\nLeerling toegevoegd: ".$f['fn']." ".$f['ln'];
                     }
 
                     $arrayKlas = array();
@@ -204,9 +207,15 @@ class bizADMQueryFunctions {
                     $arrayLKR['aanspreek'] = $f['ln']." ".$f['fn'];
                     $arrayLKR['admin'] = 0;
                     $this->db->insert("tbl_leerkrachten", $arrayLKR);
+                    $bericht .= "\nLeerkracht toegevoegd: ".$f['fn']." ".$f['ln'];
                 }
             }
+            else {
+                // ut is noch 1 noch 2, dus fout
+                $bericht .= "\nInvalid usertype in FMAD: ".$f['fn']." ".$f['ln'].": ".$f['ut'];
+            }
         }
+        return $bericht;
     }
     
     /*
