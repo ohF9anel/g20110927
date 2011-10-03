@@ -1,4 +1,15 @@
 <?php
+/**
+ * LeerlingenToevoegen.php
+ *
+ * This source file is part of the New Gabin project. More information,
+ * documentation can be found @ http://dbz.be/newgabin/
+ *
+ * @package		newgabin
+ *
+ * @author David Van Den Dooren
+ * @author Godfried Borremans <godfried.borremans@dbz.be>
+ */
 
     require "../_lib/_classes/template.class.php";
     require "../_lib/_includes/functions.inc.php";
@@ -12,7 +23,9 @@
     $admin_id = $_SESSION['admin'];
     $adminInfo = $biz->getAdminInfo($admin_id);
     staticFunctions::isAdmin($adminInfo['admin'], "indexAdm.php");
-    $biz->toevoegenLeerlingenNieuwSchooljaar($adminInfo['rangschik']);
+    $bericht = $biz->toevoegenLeerlingenNieuwSchooljaar($adminInfo['rangschik']);
 
-    header("Location:Leerlingen.php");
-    exit(0);
+    echo "<pre>".$bericht."</pre>" ;
+    echo "<a href=\"leerlingen.php\">naar leerlingen overzicht</a>";
+    // header("Location:Leerlingen.php");
+    // exit(0);
