@@ -80,7 +80,7 @@ class staticFunctions{
      * @return int
      */
     public static function createSchooljaar(){
-        //enkel de eerste 6 maand van het jaar(jan/feb/maart/apr/mei) ben je begonnen vanaf het jaar -1
+        //enkel de eerste 6 maand van het jaar(jan/feb/maart/apr/mei/juni) ben je begonnen vanaf het jaar -1
         //juli&augustus horen bij het nieuwe jaar
         //vb. 2011-05-15 ==>schoojaar=2010                    2010-09-15 ==> schoojaar=2010
         $schooljaar = 0;
@@ -89,7 +89,6 @@ class staticFunctions{
         }else{
             $schooljaar = date("Y");
         }
-
         return $schooljaar;
     }
 
