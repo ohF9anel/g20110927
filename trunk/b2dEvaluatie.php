@@ -52,7 +52,7 @@
             $array['gewijzigd_door'] = $leerling['rangschik'];
             
             $db->update("tbl_b2d_algemeen", $array, "b2d_algemeen_id = ?", $b2dAlgemeen['b2d_algemeen_id']);
-            header("Location:b2dEvaluatie.php");
+            // gbo header("Location:b2dEvaluatie.php");
             exit(0);
         }
     }else if(isset($_REQUEST['btnSendEvalB2D']) && (empty($toegewezen) || $toegewezen['project_id']==258)){
@@ -91,6 +91,7 @@
             }
             $titel = "Andere info over b2d van ".$leerling['aanspreek'];
             $onderwerp = "<h3>".$titel."</h3>".$andereInfo;
+            /* TODO: verwijder hard-coded e-mailadres hier */
             staticFunctions::sendMail("peter.biesbrouck@dbz.be", $titel, $onderwerp, $leerling['aanspreek']);
             $db->insert("tbl_leerlingen_log", $leerling); //$leerling bevat de oude gegevens
             header("Location:b2dEvaluatie.php");
