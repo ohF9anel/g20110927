@@ -18,6 +18,7 @@
     $leerling_id = $_SESSION['user'];
     $leerling = $biz->getUserInfo($leerling_id);
     $b2dpersoonlijkegegevenstpl->set_var("ACCOUNT", $leerling['aanspreek']);
+    $b2dpersoonlijkegegevenstpl->set_var("MAILCONTACT", "peter.biesbrouck@dbz.be");
 
     $toegewezenProject = $biz->getToegewezenProject($leerling_id);
     if($toegewezenProject != "" && $toegewezenProject['project_id'] != 258){
